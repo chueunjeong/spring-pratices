@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //web application에 필요한 servlet 관련된 dependency
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    //결과 확인을 위한 jsp 관련된 dependency
+    implementation 'javax.servlet:jstl:1.2'
+
+    //로그와 관련된 dependency
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+
+    //embeded tomcat과 관련된 dependency
+    implementation 'org.apache.tomcat.embed:tomcat-embed-core:8.5.42'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.42'
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
